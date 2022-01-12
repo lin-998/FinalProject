@@ -1,0 +1,526 @@
+{
+	"easycom": {
+		"custom": {
+			"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue",
+			"^trading-(.*)": "@/pages/trading/components/trading-$1.vue",
+			"^home-(.*)": "@/pages/home/components/home-$1.vue",
+			"^mine-(.*)": "@/pages/mine/components/mine-$1.vue",
+			"^defalut-(.*)": "@/pages/components/defalut-$1.vue",
+			"^consult-(.*)": "@/pages/consult/components/consult-$1.vue"
+			// "^message-(.*)": "@/pages/message/components/message-$1.vue",
+			// "^uni-(.*)": "@/components/uni-$1/uni-$1.vue"
+			// "^hq-(.*)": "@/components/hq-$1/hq-$1.vue"
+
+		}
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		// ---------------------------------------------------首页模块页面 开始---------------------------------------
+		{
+			"path": "pages/home/home",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/home/affiche/affiche",
+			"style": {
+				"navigationBarTitleText": "公告",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/home/affiche/affiche-detail",
+			"style": {
+				"navigationBarTitleText": "详情",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/home/authorization/authorization",
+			"style": {
+				"navigationBarTitleText": "API授权",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/home/authorization/huobi",
+			"style": {
+				"navigationBarTitleText": "火币",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue612",
+							"fontSrc": "/static/iconfont.ttf",
+							"fontSize": "40rpx",
+							"color": "#00b9ff"
+						}]
+					}
+				}
+			}
+		}, {
+			"path": "pages/home/authorization/course",
+			"style": {
+				"navigationBarTitleText": "教程",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/home/electronic-bill/electronic-bill",
+			"style": {
+				"navigationBarTitleText": "电子账单",
+				"enablePullDownRefresh": true,
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "晒战绩",
+							"fontSize": "28rpx",
+							"width": "120rpx",
+							"color": "#00b9ff"
+						}]
+					}
+				}
+			}
+		}
+		// ---------------------------------------------------首页模块页面 结束---------------------------------------
+		// ---------------------------------------------------登录模块页面 开始---------------------------------------
+		, {
+			"path": "pages/login/login",
+			"style": {
+				// "navigationStyle": "custom",
+				"transparentTitle": "auto"
+			}
+		}, {
+			"path": "pages/login/register",
+			"style": {
+				"navigationBarTitleText": "注册",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/login/forgetpwd",
+			"style": {
+				"navigationBarTitleText": "忘记密码",
+				"transparentTitle": "auto"
+			}
+		}, {
+			"path": "pages/login/protocol",
+			"style": {
+
+				"navigationBarTitleText": "注册协议",
+				"enablePullDownRefresh": false
+			}
+
+		}
+		// ---------------------------------------------------登录模块页面 结束---------------------------------------
+		// ---------------------------------------------------我的模块页面 开始---------------------------------------
+		, {
+			"path": "pages/mine/mine",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/mine/setting/setting",
+			"style": {
+
+				"navigationBarTitleText": "设置",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/mine/setting/personal-data",
+			"style": {
+
+				"navigationBarTitleText": "个人资料",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/mine/setting/phone-number",
+			"style": {
+
+				"navigationBarTitleText": "手机号码",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/mine/setting/login-password",
+			"style": {
+
+				"navigationBarTitleText": "登录密码",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/mine/setting/pay-password",
+			"style": {
+
+				"navigationBarTitleText": "交易密码",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/mine/setting/contact-us",
+			"style": {
+
+				"navigationBarTitleText": "联系我们",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/mine/setting/nickname",
+			"style": {
+
+				"navigationBarTitleText": "修改昵称",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/mine/share",
+			"style": {
+				"navigationBarTitleText": "邀请好友",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/mine/community",
+			"style": {
+				"navigationBarTitleText": "社区",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/mine/about-us",
+			"style": {
+
+				"navigationBarTitleText": "关于我们",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/mine/my-activecode",
+			"style": {
+
+				"navigationBarTitleText": "我的激活码",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue619",
+							"fontSrc": "/static/iconfont.ttf",
+							"fontSize": "50rpx",
+							"color": "#00b9ff",
+							"width": "120rpx"
+						}]
+					}
+				}
+			}
+
+		}, {
+			"path": "pages/mine/my-profitcard",
+			"style": {
+				"navigationBarTitleText": "我的不分润卡",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue619",
+							"fontSrc": "/static/iconfont.ttf",
+							"fontSize": "50rpx",
+							"color": "#00b9ff",
+							"width": "120rpx"
+						}]
+					}
+				}
+			}
+
+		}, {
+			"path": "pages/mine/property/property",
+			"style": {
+				"navigationStyle": "custom",
+
+				"navigationBarTitleText": "资产",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/mine/property/charge-money",
+			"style": {
+
+				"navigationBarTitleText": "充币",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/mine/property/mention-money",
+			"style": {
+
+				"navigationBarTitleText": "提币",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/mine/property/transfers-between",
+			"style": {
+
+				"navigationBarTitleText": "会员互转",
+				"enablePullDownRefresh": false
+			}
+
+		}
+		// ---------------------------------------------------我的模块页面 结束---------------------------------------
+		// ---------------------------------------------------交易模块页面 开始---------------------------------------
+		, {
+			"path": "pages/trading/trading",
+			"style": {
+				"navigationBarTitleText": "选择策略",
+				"enablePullDownRefresh": false
+				/* "navigationStyle": "custom",
+				"enablePullDownRefresh": true */
+			}
+		}, {
+			"path": "pages/trading/switch-platform/switch-platform",
+			"style": {
+
+				"navigationBarTitleText": "切换平台",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/trading/switch-platform/choose-platform",
+			"style": {
+
+				"navigationBarTitleText": "选择平台",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/trading/trading-detail",
+			"style": {
+				"navigationStyle": "custom",
+
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/trading/trade-setting",
+			"style": {
+
+				"navigationBarTitleText": "币种交易设置",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "确认",
+							"fontSize": "28rpx",
+							"color": "#00b9ff"
+						}]
+					}
+				}
+			}
+		}, {
+			"path": "pages/trading/trading-record",
+			"style": {
+
+				"navigationBarTitleText": "交易记录",
+				"enablePullDownRefresh": true,
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue616",
+							"fontSrc": "/static/iconfont.ttf",
+							"fontSize": "40rpx",
+							"color": "#00b9ff"
+						}]
+					}
+				}
+			}
+		}
+		// ---------------------------------------------------交易模块页面 结束---------------------------------------
+		// ---------------------------------------------------咨询模块页面 开始---------------------------------------
+		, {
+			"path": "pages/consult/consult",
+			"style": {
+
+				"navigationBarTitleText": "广场",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/consult/consult-detail",
+			"style": {
+				"navigationBarTitleText": "资讯详情",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/consult/help-detail",
+			"style": {
+				"navigationBarTitleText": "帮助详情",
+				"enablePullDownRefresh": false
+			}
+
+		}
+		// ---------------------------------------------------咨询模块页面 结束---------------------------------------
+		// ---------------------------------------------------日志模块页面 开始---------------------------------------
+		, {
+			"path": "pages/record/record",
+			"style": {
+				"navigationBarTitleText": "日志",
+				"enablePullDownRefresh": true,
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue63b",
+							"fontSrc": "/static/iconfont.ttf",
+							"fontSize": "40rpx",
+							"color": "#00b9ff"
+						}]
+					}
+				}
+			}
+		}, {
+			"path": "uview-ui/components/u-avatar-cropper/u-avatar-cropper",
+			"style": {
+				"navigationBarTitleText": "头像裁剪",
+				"navigationBarBackgroundColor": "#000000"
+			}
+		}
+		// ---------------------------------------------------日志模块页面 结束---------------------------------------
+		// ---------------------------------------------------日志模块页面 开始---------------------------------------
+        ,{
+						"path": "pages/consult/simulate-setting",
+						"style": {
+							"navigationBarTitleText": "参数设置",
+							"enablePullDownRefresh": false,
+							"app-plus": {
+								"titleNView": {
+									"buttons": [{
+										"text": "确认",
+										"fontSize": "28rpx",
+										"color": "#00b9ff"
+									}]
+								}
+							}
+						}
+        }
+        ,{
+            "path" : "pages/consult/my-simulate",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的模拟",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/trading/strategy",
+            "style" :                                                                                    
+            {
+							/* "navigationStyle": "custom", */
+							"navigationBarTitleText": "",
+							"enablePullDownRefresh": true
+            }
+            
+        }
+        ,{
+            "path" : "pages/consult/currency",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "选择交易对",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/message/message",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "消息",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/community/community",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "社区",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/video/video",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/homePage/homePage",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+								"navigationStyle": "custom"
+								
+            }
+            
+        }
+        ,{
+            "path" : "pages/minePage/minePage",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+								"navigationStyle": "custom"
+            }
+            
+        }
+    ],
+
+
+
+	// 配置
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarBackgroundColor": "#ffffff",
+		"navigationBarTitleText": "",
+		"backgroundColor": "#ffffff"
+	},
+	"tabBar": {
+		"borderStyle": "white",
+		"color": "#bcbcbc",
+		"selectedColor": "#333333",
+		"backgroundColor": "#ffffff",
+		"fontSize": "10px",
+		"height": "50px",
+		"iconWidth": "18px",
+		"list": [{
+				"pagePath": "pages/homePage/homePage",
+				"iconPath": "static/tabbar/home.png",
+				"selectedIconPath": "static/tabbar/home-active.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/community/community",
+				"iconPath": "static/tabbar/trading.png",
+				"selectedIconPath": "static/tabbar/trading-active.png",
+				"text": "社区"
+			},
+			{
+				"pagePath": "pages/video/video",
+				"iconPath": "static/tabbar/record.png",
+				"selectedIconPath": "static/tabbar/record-active.png",
+				"text": "视频"
+			},
+			{
+				"pagePath": "pages/message/message",
+				"iconPath": "static/tabbar/consult.png",
+				"selectedIconPath": "static/tabbar/consult-active.png",
+				"text": "消息"
+			},
+			{
+				"pagePath": "pages/minePage/minePage",
+				"iconPath": "static/tabbar/mine.png",
+				"selectedIconPath": "static/tabbar/mine-active.png",
+				"text": "我的"
+			}
+		]
+	}
+}

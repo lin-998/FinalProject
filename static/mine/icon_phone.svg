@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#pattern);
+      }
+    </style>
+    <pattern id="pattern" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 64 64">
+      <image width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABrklEQVR4Xu2bQU4DMQxFv08Bgmuw5giwgkPCCo7AutdoRU9hNBJInZHA+naSdpjPFid23tj/d5EYNv5nGz8/BEAdkCTg7m8A7gDcJLdotewAYGdmj5kNUyPg7p5J1nuNmdHnoRe4+wuAp96HSe7/ambPzNoMgE8AV0ySgbFHM7tm8mUAzNo/03ZMgVHschzZegQgIrz8f5U4my+Kr9ajDogIqwMWBKotxwKP4qv1aAQiwhoBjcCcQHXm2I6L4qv1SAMiwtIAaYA0YEagKjrsyEXx1XokghFhiaBEUCIoETwlUFVdVnOi+Go9coGIsFxALiAXkAvIBU4IVG2HFd0ovlqPbDAiLBuUDcoG/7RBdoR6xw+/H9D7QOz+AkBelCrbIPuFescP7wA2YWsA+iG0uLPIfpDyCLAJ1QGNCaxuBKJrtmxHCcDaNEAdENw0//cj0FgDsToNEIDGBNQBZ3CB/QW8E/qtjw5mdss0Wean8PRY6oFJMjD2nX08RQOYDhN5+cADz1KxFjotTgH4hjA9nrq/gPdDRwAf7GOpH3JpAOf6yq3zCkBromvbb/Md8AXKTKhQgXe+KAAAAABJRU5ErkJggg=="/>
+    </pattern>
+  </defs>
+  <rect id="icon_phone" class="cls-1" width="20" height="20"/>
+</svg>

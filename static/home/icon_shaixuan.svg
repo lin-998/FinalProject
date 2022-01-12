@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 22 22">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#pattern);
+      }
+    </style>
+    <pattern id="pattern" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 64 64">
+      <image width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEiUlEQVR4Xu2aTYhcRRDHfzVDFsQvEBEjycmA+IEoLkjw4K6s27sr8bjgFyQQNHoMxIMesp4EiXjSqFEiQqIYLxrZ+VBJLioBA1FYkagXs2yIyUETAuKyr6Rn4rIz0+/1ey/9mFnnNcxlurv6X/+urtdV1cKQNxly/SkJKC1gyBkoj0CiAdR0jioPBzaSt5iUIz0yG/o5wvXB1lIuYeRxn7x4C6jpdioc9AnI1S/MdpDQ1GMoY7lkJU0SjjMp48lD4nrtjsC24KDaAo+u7k5DHwC+L2gdK3YUIyfj5MdbQFG7YpGs3ZmajlHhWGEERIwzLcdLAmIYyGYBEa9k3inrRLvPdzoLmCNyXNQqqPN/C6zC3h58QS3AEjAtc5lIcB2lNAR4gPdgiDtKJQEhfUBpAeURKH1A6QTLr0D5GSzvAeVFKAsD5U3QEeuv26uwBZ6n5QmG8qzlSqoEjQXyKO+ak8YCQq1VEpA3GKrrfoRdoTaiQ47yNlPyfOu/eb2dKr8Wso4VusIWZuS37Bmh4lJVp6jyFBPy0yqouh5GeCI4CcpHTMmTSXKT6wJf6V2sMEbELUHAVVhihE8Ylz975DV0mogHg6zTzg6dwEjNJ68sjPgY+r/3+y2gpncAG4MQoZxJckixayzoCL9zGxtaOP7iHxaZkYshMMUTUNeNCEcBW7gI11JUa1YX+1J3EGGd2IQDwAngEMqnTMnZvACTSmNzzjRz3pXWzvPlFhv6LGB/achfIuJA5kTNFTzZ6gIhlLcykqzAFmRd+X3/2qcwcr9/WOeIwSLg6stx5zGS6ZM9OATU9XWE3Vl30DH+CEZm08rJRkC7NJYtIqyyN7E0ZpH6KsTKywjniFhEuI4qm4nYCdwdo+hzGHk3DQnZCQidFG0T8M4Vp+fCfCdGfnbcHK8F7JfARcJJjIyuDwLqehPCInBND2BPINMa31BLjr2rdHu3zkcYMWz03wKauhPlgAPfSxh51buLNd1KhW/z+oL+E9DQN4EXehQYYTPjYi3D3+r6A8K9XQMXMHKPb3L/CajrZwidj5mU00xJr1nHadPUgyjbu7ovYuTGYSbgHEZuHXwCijoCQpNJMYNPQF13Iex3AN2DkX0+BRLuEPswssc3v/8+YF43UeWME6gRf7je0Hlgumd+yic2/SfAInc5wrZG37DCTGzs39QPUZ7JTV4rLov3rL2vN31hrEuWrzRm5yQlYIULKK8R8SPKd4ywiRW2AjarHBcuL1BltiPxGuwiVEQs0LaCUMHQf6qmIiGbBfg8Str+uHzA1YfD3Qi8JAwWARZ+0rlOS3DnuAWUR+PSZoNHgAWfHB1mpyHBdw1mTrBNgnVwT0PrGf19Dq3/AD4m4g2Us1T5O4GZeYw85upPzgpXOBz8Hb/wAZOyI9M2rk2LL3MZ4Tw3c4FRWV6VU9ctCL/EyH0fIzaB0tP8Fw1bHlsOVBrbwBITcjqT8lkGN/QR4GvHlG0Y+SIfAVkADMLYpj5ExItUuKEFR3kPI4fioPktYBCUKhBDSUCB5K4L0aUFrIttKhDk0FvAv6pUC25F8kJeAAAAAElFTkSuQmCC"/>
+    </pattern>
+  </defs>
+  <rect id="icon_shaixuan" class="cls-1" width="22" height="22"/>
+</svg>

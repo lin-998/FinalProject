@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 22 22">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#pattern);
+      }
+    </style>
+    <pattern id="pattern" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 64 64">
+      <image width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAETUlEQVR4Xu2aT4gcRRTGf29WL4ogChrXiwchePCiEU0kYMgyPRPYqIcseEg8GBIRokYwHgTd5CIIElFEIqhJvEXwv870kGUjymLAgAoREYRAgiLqXjZgXJh5oWezmdnuqu7amVm67e6GudS8qve+r77696qEgn9ScPyUBEQU0NTbUNbnThkLfM+UXAzjWqkAX48Ae3IHfgnQOYQDVOXDfnw9Alq6HeXTnILvwWpzC9vkr+WCHgENnabCy7knoMMW6nIqSsBXWmUMP+cEnOUSG3lYFqIEBCX5ngPmGWMzE/KzeQ5YLi30KpBz/ZvglRuhAnb6CsilAkoFFJyBcggUXABlPmDlEDipt9LmRYS7c6eMNl9Tl2l7PqCpNyH8kzvg/YA6HAyT0FNAU3ciHM81AQG4MdYzIb9GT4MlAUUfAoEmCj0J5n7wmwGWO8GCdvxV2KUCSgVklYEgOSvcC4zTYZwK5+lwgQVmmZLFUYWdvSHg6x6UKYStFpCXgBMIn1CVj4clIjsEtHQHygvQ7XXXbw7lCDUZeAufDQKWwJ9wRW2wm8aTg4PUjxIwiosR5Tzb5DengEZ1JylMhW9+XfyvJGD4nuj3+TmebI8Noqm7EI65BOpkMwAJPQLW4nLUcP6+CmRW17HIN8CdFnDvAKeBH/HkDL4Gc0PwexzYZKlzBk82OJF1xWhtr8eFU1RlizEgX98A9lmC3dAFbfvih81ePAnIc/rW+oHEYTx5LhKJr9cDF4AbDVE+gSfvJUbf1CcR3o7YKTPUZCKxfkQBQYGvwUy8w7Vygt3veHK7pfcfAaJreJxiTA352gBqBhLGqckfLjiiq0BDH3KpmGjT9wojYmuX8Krki69PAW8ZYpnEky8SY4SU0uJ2AuLHfhhRQzdSYc4A1JnIdDZCNgI8WX08vmqEgLjVJ2S8eocuukqyWXsF7MaTd5PCCP7PGgHO0u2Cs80BHWrUxenBVzoE+GpeBWAOTx506bmuTUtPooZT4w1cxyb516WdtAiw7wNcx29LX0d5xgDyFzy5ywV8ekNgSb72nWDSnt62/i+jVj7rklOXc0lEpKOAIKqks4DwPsq3hrPAXuCeJGDARTrsoy5H42zTIyCIatSnQTPSY3SYtqkhSkBLH6M95HN5IcgFfElN5hN7alT5gHhHQT7xJZMaws/lo5uKRAQxBmOsY0L+TGxi+DzEAWAS2BzrK/Z6vKWPonyUGOzqDN7Ek6edqgySExRmaPMKdZnp+mjqswiHY/zN48nN/f/3FGA/WDjFbzFKzgqFKyZnhUH5iQrHqcprEb8NvY9K95hsTq6Gttv9CRHbwWJwApRd1OSDgRqw3Qtcyw+Jw2pWr2GRV4H9Id+n8eQBswKC0qW02CHg/oGC7lU6C3yHJ7uHbGe46i3diXbx3IFwlP94nkn5207AcO7+l7XT3QdkgLKSgAx0QqohlApIlf4MOC8VkIFOSDWEy2yLXFDFJUtIAAAAAElFTkSuQmCC"/>
+    </pattern>
+  </defs>
+  <rect id="icon_jiaoyijilu_shaixuan" class="cls-1" width="22" height="22"/>
+</svg>
