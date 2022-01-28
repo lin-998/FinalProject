@@ -13,7 +13,15 @@ class Main{
 	}
 	//获取用户信息
 	getUserInfo(params){
-		return  http.get(baseUrl+'/user_info',{params}).then(res=>res.data)
+		return  http.get(baseUrl+'/findDataByUserId',{params}).then(res=>res.data)
+	}
+	//修改用户头像
+	setAvator(data){
+			return  http.post(baseUrl+'/setAvator',data).then(res=>res.data)
+		}
+	//发布动态
+createPost(data){
+		return  http.post(baseUrl+'/createPost',data).then(res=>res.data)
 	}
 }
 export const mainApi=new Main()

@@ -12,16 +12,14 @@ export default {
 	//获取用户详细信息
 	//获取用户详细信息
 	getUserInfo({ commit }){
-		console.log(333)
-		mainApi.getUserInfo({user_id:15}).then(res=>{
-			console.log(res)
-			// if(res.data.avatarUrl){
-			// 	res.data.avatarUrl=imgUrl+res.data.avatarUrl
-			// }else{
-			// 	res.data.avatarUrl=require('static/mine/user_por.jpg')
-			// }
-			commit('getUserInfo',res.data.userInfo)
-			uni.setStorageSync('user',JSON.stringify(res.data.userInfo))
+		
+		mainApi.getUserInfo().then(res=>{
+		console.log(res.data)
+			if(!res.data.avator){
+				res.data.avator=require('static/mine/user_por.jpg')
+				}
+			commit('getUserInfo',res.data[0])
+			uni.setStorageSync('user',JSON.stringify(res.data[0]))
 		})
 	}
 };

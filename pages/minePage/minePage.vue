@@ -55,6 +55,7 @@
 <script>
 	import { apiUrl,imgUrl } from "@/api/app.js";
 	import {mineApi,UploadApi,loginApi} from '@/api/myAjax.js'
+	import {mainApi} from '@/api/appApi.js'
 	import { JSEncrypt } from "@/common/jsencrypt.min.js";
 	export default {
 		data() {
@@ -115,6 +116,7 @@
 			this.show=false
 		},
 		created() {
+			console.log(this.$store.state.userInfo.id)
 			// if(!uni.getStorageSync('user')){return}
 			// this.$store.dispatch('getUserInfo')
 			// 监听从裁剪页发布的事件，获得裁剪结果
@@ -126,17 +128,17 @@
 				if(this.sss){
 					this.sss=false
 					uni.uploadFile({
-						url: UploadApi,
+						url: 'http://localhost:3000/api/v1/upload',
 						filePath: path,
 						name: 'file',
-						header:{"X-Requested-Token": uni.getStorageSync('userToken')},
+						// header:{"X-Requested-Token": uni.getStorageSync('userToken')},
 						success: (res) => {
 							if(JSON.parse(res.data).code!=200){return this.$toast('修改头像失败')}
 							this.sss=false
-							mineApi.editUserInfo({
+							mainApi.setAvator({
 								id:this.$store.state.userInfo.id,
-								avatarUrl:JSON.parse(res.data).data,
-								username:this.$store.state.userInfo.username
+								avator:JSON.parse(res.data).data,
+								// username:this.$store.state.userInfo.username
 								}).then(res=>{
 									this.sss=false
 								if(res.code==200){
@@ -151,22 +153,10 @@
 				}
 			})
 		},
-		// onPullDownRefresh(){
-		// 	this.$store.dispatch('getUserInfo')
-		// 	uni.stopPullDownRefresh()
-		// },
+	
+	
 		methods:{
-			//获取升级列表
-			// getBuyRank(){
-			// 	mineApi.getBuyRank({}).then(res=>{
-			// 		if(res.code==200){
-			// 			this.AllCardLog=res.data
-			// 			if(this.AllCardLog.length==0){return}
-			// 			this.userItem=this.AllCardLog[0]
-			// 		}
-			// 	})
-			// },
-			//确认升级
+			
 			confirmUpgrade(item,tradePassword){
 				console.log(item);
 				loginApi.getPublicKey({username:this.$store.state.userInfo.id}).then(res=>{
