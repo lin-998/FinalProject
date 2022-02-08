@@ -23,5 +23,10 @@ class Main{
 createPost(data){
 		return  http.post(baseUrl+'/createPost',data).then(res=>res.data)
 	}
+	//轮播图
+	getSlideshow(){
+		return  http.get(baseUrl+'/get_slideshow').then(res=>res.data)
+	}
+	
 }
 export const mainApi=new Main()

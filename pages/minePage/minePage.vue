@@ -1,6 +1,6 @@
 <template>
 	<view id="containerId">
-		<view class="mine-header">
+		<view class="mine-header" :style="{background:'url(https://i.imgur.com/Eqzpxh7.jpg) no-repeat center/100% '}">
 			<view class="icon">
 				<text @click="toRouter" class="iconfont">&#xe6da;</text>
 			</view>
@@ -11,7 +11,7 @@
 				</view>
 				<navigator class="info-detail" url="/pages/mine/setting/personal-data">
 					
-					<view class="info-id">{{$store.state.userInfo.username}}</view>
+					<view class="info-id">{{$store.state.userInfo.name}}</view>
 					<view class="info-name"><text>{{$store.state.userInfo.activeStatus?$store.state.userInfo.userRankName:'未激活会员'}}</text>
 					</view>
 				</navigator>
@@ -21,10 +21,10 @@
 					升级
 				</view>
 			</view>
-			<view class="img">
+		<!-- 	<view class="img">
 				
-			<!-- <image class="img" src="/static/mine/bl.png" mode="widthFix"></image> -->
-			</view>
+			<image class="img" src="/static/mine/bl.png" mode="widthFix"></image>
+			</view> -->
 		</view>
 		<view class="mine-nav-in">
 			<view class="mine-nav LittleBg">
@@ -240,6 +240,7 @@
 	height: 100%;
 }
 .mine-header{
+	opacity: 0.8;
 	padding: 80rpx 30rpx 50rpx;
 	background-color: #FFFFFF;
 	position: relative;
@@ -250,7 +251,7 @@
 		position: absolute;
 		bottom: 0;
 		right: 0;
-		background: url(/static/mine/bl.png);
+		// background: url(/static/mine/bl.png);
 		background-size: 100%;
 		// background-image: linear-gradient(to bottom,rgb(244, 195, 77), transparent);
 	}
@@ -259,7 +260,7 @@
 		margin-bottom: 23rpx;
 		.iconfont{
 			font-size: 40rpx;
-			color: #999;
+			color: #f5f5f5;
 		}
 	}
 	.user-info{
@@ -267,7 +268,7 @@
 		margin: 0 40rpx;
 		height: 260rpx;
 		padding-left: 50rpx;
-		background: url(/static/mine/pic_my.png) no-repeat;
+		
 		background-size: 100%;
 		display: flex;
 		// align-items: center;
