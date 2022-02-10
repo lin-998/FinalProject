@@ -5,7 +5,7 @@ import MinCache from './MinCache'
 import store from './store/index.js';
 import uView from "uview-ui";
 import filters from '@/common/filters.js'
-import VueSocketIO from 'vue-socket.io'
+// import VueSocketIO from 'vue-socket.io'
 Vue.use(MinCache)
 Vue.use(uView);
 

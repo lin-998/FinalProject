@@ -18,8 +18,8 @@ export default {
 			if(!res.data.avator){
 				res.data.avator=require('static/mine/user_por.jpg')
 				}
-			commit('getUserInfo',res.data[0])
-			uni.setStorageSync('user',JSON.stringify(res.data[0]))
+			commit('getUserInfo',res.data)
+			uni.setStorageSync('user',JSON.stringify(res.data))
 		})
 	}
 };

@@ -6,8 +6,8 @@
 			"^home-(.*)": "@/pages/home/components/home-$1.vue",
 			"^mine-(.*)": "@/pages/mine/components/mine-$1.vue",
 			"^defalut-(.*)": "@/pages/components/defalut-$1.vue",
-			"^consult-(.*)": "@/pages/consult/components/consult-$1.vue"
-			// "^message-(.*)": "@/pages/message/components/message-$1.vue",
+			"^consult-(.*)": "@/pages/consult/components/consult-$1.vue",
+			"^h-(.*)": "@/pages/community/components/h-$1.vue"
 			// "^uni-(.*)": "@/components/uni-$1/uni-$1.vue"
 			// "^hq-(.*)": "@/components/hq-$1/hq-$1.vue"
 
@@ -469,6 +469,33 @@
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false,
 								"navigationStyle": "custom"
+            }
+            
+        }
+        ,{
+            "path" : "pages/community/publish",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "发布动态",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/community/moment-detail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "动态详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/minePage/mylike",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我喜欢",
+                "enablePullDownRefresh": false
             }
             
         }
