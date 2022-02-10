@@ -23,10 +23,35 @@ class Main{
 createPost(data){
 		return  http.post(baseUrl+'/createPost',data).then(res=>res.data)
 	}
+
+	//获取所有动态
+	
+	getAllPost(params){
+		return  http.get(baseUrl+'/getAllPost',{params}).then(res=>res.data)
+	}
+	//获取用户点赞动态
+	 
+	 getUserPostLike(params){
+	 	return  http.get(baseUrl+'/getUserPostLike',{params}).then(res=>res.data)
+	 }
+	//动态点赞
+	postLike(data){
+			return  http.post(baseUrl+'/postLike','',{params:data}).then(res=>res.data)
+		}
+		//动态取消点赞
+	postUnlike(data){
+		return  http.post(baseUrl+'/postUnlike','',{params:data}).then(res=>res.data)
+			}
+			//发布评论
+		createComment(data){
+			return  http.post(baseUrl+'/createComment',data).then(res=>res.data)
+				}	
+
 	//轮播图
 	getSlideshow(){
 		return  http.get(baseUrl+'/get_slideshow').then(res=>res.data)
 	}
 	
+
 }
 export const mainApi=new Main()

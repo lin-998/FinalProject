@@ -6,7 +6,7 @@
 			</view>
 			<view class="user-info">
 				<view class="info-img" @click="chooseAvatar">
-					<image v-if="$store.state.userInfo.avatarUrl" :src="$store.state.userInfo.avatarUrl"></image>
+					<image v-if="$store.state.userInfo.avator" :src="$store.state.userInfo.avator"></image>
 					<image v-else src="/static/mine/user_por.jpg"></image>
 				</view>
 				<navigator class="info-detail" url="/pages/mine/setting/personal-data">
@@ -72,8 +72,8 @@
 					{name:'资产',img:require('static/mine/icon_zichang.png'),url:'/pages/mine/property/property'},
 					{name:'分享',img:require('static/mine/icon_fenxiang.png'),url:'/pages/mine/share'},
 					{name:'社区',img:require('static/mine/icon_shequ.png'),url:'/pages/mine/community'},
-					{name:'关于我们',img:require('static/mine/icon_about.png'),url:'/pages/mine/about-us'},
-					// {name:'联系我们',img:require('static/mine/lxwm.png'),url:'/pages/mine/about-us'},
+					{name:'我喜欢的动态',img:require('static/mine/icon_about.png'),url:'/pages/minePage/mylike'},
+					
 				],
 				sss:false,
 				enterNumber:0,
@@ -116,7 +116,7 @@
 			this.show=false
 		},
 		created() {
-			console.log(this.$store.state.userInfo.id)
+			console.log(this.$store.state.userInfo)
 			// if(!uni.getStorageSync('user')){return}
 			// this.$store.dispatch('getUserInfo')
 			// 监听从裁剪页发布的事件，获得裁剪结果

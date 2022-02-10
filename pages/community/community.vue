@@ -1,49 +1,79 @@
 <template>
-	<view>
+	<view class="contain">
 		社区
-		<u-upload ref="uUpload" :action="action" :auto-upload="true" ></u-upload>
-				<u-button @click="submit">提交</u-button>
+		<view class="moment-wrap" >
+			<scroll-view   @scrolltolower="scrollTolower">
+				<block v-for="(item,index) in list" :key="index" class="inter-component">
+					<hMoment :item="item"  @updataLike="updata"/>
+				</block>
+			</scroll-view>
+			
+			
+			
+		</view>
+		
 	</view>
 </template>
 
 <script>
 	import {mainApi} from '@/api/appApi.js'
+	import  hMoment  from "./components/h-moment.vue"
 	export default {
+		components:{
+			hMoment
+		},
 		data() {
 			return {
-					action: 'http://localhost:3000/api/v1/upload',
-								fileArr: []
+			
+				list:[],
 			}
 		},
+		onShow() {
+			this.getAllPost()
+		},
 		methods: {
-			submit() {
-							let files = [];
-							// 通过filter，筛选出上传进度为100的文件(因为某些上传失败的文件，进度值不为100，这个是可选的操作)
-							files = this.$refs.uUpload.lists.filter(val => {
-								return val.progress == 100;
-							})
-							files.forEach(item=>{
-								this.fileArr.push(item.response.data[0])
-							})
-							// 如果您不需要进行太多的处理，直接如下即可
-							// files = this.$refs.uUpload.lists;
-							console.log(files)
-							console.log(JSON.stringify(this.fileArr))
-							let data={
-								content:'333',
-								id:'3333',
-								fileArr:JSON.stringify(this.fileArr)
-							}
-								mainApi.createPost(data).then(res=>{
-									console.log(res)
-									
-								})
-						},
+			updata(){
+				this.$nextTick(function(){
+					this.getAllPost()
+				})
+				
+			},
+			//获取动态
+			getAllPost(){
+				mainApi.getAllPost().then(res=>{
+					if(res.code==200){
+						this.list=res.data||[]
+					}else{
+						this.$toast('获取内容失败')
+					}
 					
-		}
+				})
+			},
+			scrollTolower(){
+				
+			}
+					
+		},
 	}
 </script>
 
-<style>
+<style scoped lang="scss">
+	.contain{
+		padding: 0 10rpx 0 10rpx;
+		
+	}
+	.moment-wrap{
+		  column-count: 2;
+		  column-gap: 2rpx;
+		// display: flex;
+		// flex-wrap: wrap;
+		
+		 &:after {
+		    content: '';
+		    display: block;
+		    flex-grow: 99999;
+		  }
+		  
+	}
 
 </style>

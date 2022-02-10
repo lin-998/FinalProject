@@ -144,7 +144,7 @@
 		onShow: function() {
 			console.log('App Show')
 			if(uni.getStorageSync('user')) {
-				// this.$store.dispatch('getUserInfo')
+				this.$store.dispatch('getUserInfo')
 				// this.getFreeBalance()
 			}
 		},
