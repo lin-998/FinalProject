@@ -36,6 +36,9 @@
 	import {loginApi} from '@/api/myAjax.js'
 	import {mainApi} from '@/api/appApi.js'
 	export default {
+		sockets:{
+			
+		},
 		data() {
 			return {
 				loading:false,
@@ -114,6 +117,7 @@
 						// 	this.$store.commit('userLoginStatus',res.data.id)
 						// }
 						this.$toast('登录成功')
+						this.$socket.emit('login',res.userInfo.user_id );
 						uni.setStorageSync("userToken",res.token)
 						uni.setStorageSync("user",res.userInfo)
 						this.$store.dispatch('getUserInfo')

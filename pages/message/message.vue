@@ -61,6 +61,9 @@
 <script>
 	import { Utils } from "@/common/common.js"
 	export default {
+		 sockets: {
+
+		    },
 		data() {
 			return {
 				instructor:false,
@@ -79,6 +82,8 @@
 			}
 		},
 		onShow() {
+console.log(this.$socket)
+this.$socket.emit('update','23444')
 			this.barList = [
 				'hhhu',
 				'hhhu',

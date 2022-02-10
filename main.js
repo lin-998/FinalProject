@@ -10,13 +10,17 @@ Vue.use(MinCache)
 Vue.use(uView);
 
  //socket
-// Vue.use(new VueSocketIO({
-//     debug: true,
-//     // 服务器端地址
-//     connection: 'http://localhost:3000',
-//     // vuex: {
-//     // }
-// }))
+Vue.use(new VueSocketIO({
+    debug: true,
+    // 服务器端地址
+    connection: 'http://localhost:3000',
+// vuex: {
+//         store,
+//         actionPrefix: 'SOCKET_',
+//         mutationPrefix: 'SOCKET_'
+//     },
+    // options: { path: "/my-app/" } //Optional options
+}))
 //消息提示
 Vue.prototype.$toast = Utils.toast;
 Vue.config.productionTip = false
