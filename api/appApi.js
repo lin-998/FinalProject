@@ -51,7 +51,26 @@ createPost(data){
 	getSlideshow(){
 		return  http.get(baseUrl+'/get_slideshow').then(res=>res.data)
 	}
-	
+	//消息首页列表
+	msgListAction(){
+		return  http.get(baseUrl+'/message').then(res=>res)
+	}
+	//获取数据库的消息
+	getPrivateMsg(params){
+		return  http.get(baseUrl+'/private_detail',{params}).then(res=>res.data)
+	}
+	// 存此条私聊信息到数据库
+	saveMsgByDB(data){
+		return  http.post(baseUrl+'/private_save_msg',data).then(res=>res.data)
+	}
+	//机器人的消息
+	getRobatMsg(params){
+		return  http.get(baseUrl+'/robot',{params}).then(res=>res.data)
+	}
+	//某个用户的资料消息
+	someOneInfo(params){
+		return  http.get(baseUrl+'/user_info',{params}).then(res=>res.data)
+	}
 
 }
 export const mainApi=new Main()

@@ -8,7 +8,7 @@
 				<text>{{item.nickname}}</text>
 				</view>
 				<view class="click-like right" @click="clickLike(item)" >
-					<u-icon v-if="heartFill" name="heart-fill"  color="red"  size="28"></u-icon>
+					<u-icon v-if="heartFill||likeStatus" name="heart-fill"  color="red"  size="28"></u-icon>
 					<u-icon v-else  name="heart"  size="28"></u-icon>
 					<text>{{item.like_counts}}</text>
 				</view>
@@ -22,7 +22,7 @@
 	import {mainApi} from '@/api/appApi.js'
 	export default{
 			name:'hMoment',
-			props:['item'],
+			props:['item','likeStatus'],
 			data(){
 				return{
 					heartFill:false

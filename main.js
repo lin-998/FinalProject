@@ -5,10 +5,11 @@ import MinCache from './MinCache'
 import store from './store/index.js';
 import uView from "uview-ui";
 import filters from '@/common/filters.js'
-// import VueSocketIO from 'vue-socket.io'
+import VueSocketIO from 'vue-socket.io'
+import  commen  from "@/common/commen.js";
 Vue.use(MinCache)
 Vue.use(uView);
-
+Vue.prototype.$commen = commen
  //socket
 Vue.use(new VueSocketIO({
     debug: true,

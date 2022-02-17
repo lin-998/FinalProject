@@ -28,17 +28,18 @@
 					
 				</view>
 			</view>
-			<view class="msg-item" v-for="(v,i) in msgList" :key="i">
+			<!-- 消息列表 -->
+			<view class="msg-item" v-for="(v,i) in msgListGetter" :key="i" @click="enterChat(v.type,v.id)">
 				<view class="portrait">
 					<u-badge  type="error" :count="7+i" ></u-badge>					
-					<u-image width="106" height="106" src="/static/message/dz.png" shape="circle"></u-image>
+					<u-image width="106" height="106" :src="v.avator" shape="circle"></u-image>
 				</view>
 				<view class="msg-right">
 					<view class="msg-content">
 						<view class="msg-name-time">
-							<view class="msg-name">官方小助手</view><view class="msg-time">03-19</view>
+							<view class="msg-name">{{v.name}}</view><view class="msg-time">{{v.time.slice(5,10)}}</view>
 						</view>
-						<view class="msg-text">恭喜你抽中1个月会员试用卡，快点击进入恭喜你抽中1个月会员试用卡，快点击进入</view>					
+						<view class="msg-text">{{v.message}}</view>					
 					</view>
 					
 				</view>
@@ -60,6 +61,9 @@
 
 <script>
 	import { Utils } from "@/common/common.js"
+	import {
+	mapGetters
+} from 'vuex'
 	export default {
 		 sockets: {
 
@@ -81,9 +85,12 @@
 				]
 			}
 		},
+		onload(){
+			
+		},
 		onShow() {
-console.log(this.$socket)
-this.$socket.emit('update','23444')
+// console.log(this.$socket)
+// this.$socket.emit('update','23444')
 			this.barList = [
 				'hhhu',
 				'hhhu',
@@ -96,6 +103,17 @@ this.$socket.emit('update','23444')
 				{image:require('static/message/pl.png'),name:'ss',type:"comment"},
 				{image:require('static/message/ql.png'),name:'gg',type:"myGroup"},
 			]
+			
+		console.log(this.$store.getters.msgListGetter)
+		
+		// this.getMsgBySocket();
+		},
+		created(){
+			
+if (this.$store.state.firstLoad) {
+			this.$store.dispatch('msgListAction')
+			this.$store.commit('firstLoadMutation', false)
+		}
 		},
 		methods: {
 			goPages(type){
@@ -103,7 +121,35 @@ this.$socket.emit('update','23444')
 				// 	url:Utils.SwithRouter(type)
 				// })
 			},
-		}
+			enterChat(chatType, chatId) {
+			const path = chatType == 'private' ? `/pages/message/private_chat?to_userId=${chatId} ` : `/group_chat/${chatId}`
+			uni.navigateTo({
+				url:path
+			})
+			// this.$router.push(path)
+		},
+		// 获取私聊和群的消息
+		getMsgBySocket() {
+			socket.removeAllListeners('getPrivateMsg');
+			socket.removeAllListeners('getGroupMsg');
+			socket.on('getPrivateMsg', (data) => {
+				console.log('首页获取私聊消息', data);
+				data.type = 'private'
+				this.$store.commit('updateListMutation', data)
+			})
+			socket.on('getGroupMsg', (data) => {
+				console.log('首页获取群消息', data);
+				data.type = 'group'
+				this.$store.commit('updateListMutation', data)
+			})
+		},
+		},
+		computed:{
+...mapGetters([
+			'msgListGetter'
+		])
+		},
+		
 	}
 </script>
 

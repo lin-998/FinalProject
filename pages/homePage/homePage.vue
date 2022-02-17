@@ -23,48 +23,44 @@
 
 		</view>
 		<view><defalut-img></defalut-img></view>
-		<!-- //瀑布流 -->
-		 <view id="box">
-		        <view class="item item-1">1</view>
-		        <view class="item item-2">2</view>
-		        <view class="item item-3">3</view>
-		        <view class="item item-4">4</view>
-		        <view class="item item-5">5</view>
-		        <view class="item item-6">6</view>
-		        <view class="item item-7">7</view>
-		        <view class="item item-8">8</view>
-		        <view class="item item-9">9</view>
-		        <view class="item item-10">10</view>
-		        <view class="item item-11">11</view>
-		        <view class="item item-12">12</view>
-		        <view class="item item-13">13</view>
-		        <view class="item item-14">14</view>
-		        <view class="item item-15">15</view>
-		        <view class="item item-16">16</view>
-		        <view class="item item-17">17</view>
-		        <view class="item item-18">18</view>
-		        <view class="item item-19">19</view>
-		        <view class="item item-20">20</view>
-		        <view class="item item-21">21</view>
-		        <view class="item item-22">22</view>        
-		    </view>
+<view class="mylike_post">
+	<u-waterfall v-model="flowList" ref="uWaterfall">
+				<template v-slot:left="{leftList}">
+					<view class="demo-warter" v-for="(item, index) in leftList" :key="index">
+						<h-moment :item="item"  @updataLike="updata" :heartFill="true" />
+					</view>
+				</template>
+				<template v-slot:right="{rightList}">
+					<view class="demo-warter" v-for="(item, index) in rightList" :key="index">
+							<h-moment :item="item"  @updataLike="updata":heartFill="true"/>
+					</view>
+				</template>
+			</u-waterfall>
+</view>
+	
+		
+
 		
 		<u-back-top :scroll-top="isGotoTop" top="1500"></u-back-top>
 	</view>
 </template>
 
 <script>
-		import {mainApi} from '@/api/appApi.js'			
+		import {mainApi} from '@/api/appApi.js'		
+		
 	export default {
+		
 		data() {
 			return {
 				isGotoTop:0,
 				swiperImg:[],//轮播图
+				flowList:[],
+				list:[],
 			}
 		},
 		onShow() {
 			this.getSlideshow()
-			this.waterFall()
+			this.getUserPostLike()
 		},
 		methods: {
 			getSlideshow(){
@@ -72,108 +68,32 @@
 					this.swiperImg=res.data.imgList
 				})
 			},
-			//瀑布流
-			waterFall(){
-	// 			uni.createSelectorQuery().selectViewport().scrollOffset(res => {
-	// 			  console.log("竖直滚动位置" + res.scrollTop);
-	// 			}).exec();
- 
- // let view = uni.createSelectorQuery().in(this).select(".item-1");
- // view.fields({
- //   size: true,
- //   scrollOffset: true
- // }, data => {
- //   console.log("得到节点信息" + JSON.stringify(data));
- //   console.log("节点的宽为" + data.width);
- // }).exec();
-
-	 
+			getUserPostLike(){
+				mainApi.getUserPostLike({user_id:JSON.parse(uni.getStorageSync('user')).id})
+				.then(res=>{
+					this.list=res.data
+					this.addRandomData()
+				})
 			},
-		}
+		addRandomData() {
+						for(let i = 0; i < 10; i++) {
+							let index = this.$u.random(0, this.list.length - 1);
+							// 先转成字符串再转成对象，避免数组对象引用导致数据混乱
+							let item = JSON.parse(JSON.stringify(this.list[index]))
+							item.id = this.$u.guid();
+							this.flowList.push(item);
+						}
+					},
+		},
+	
+		
 	}
 </script>
 
 <style lang="scss" scoped >
-	 .item {
-	            float: left;
-	            display: flex;
-	            justify-content: center;
-	            align-items: center;
-	            font-size: 30px;
-	            font-weight: 700;
-	            color: aliceblue;
-	            margin-right: 15px;
-	            margin-bottom: 15px;
-	            width: 300rpx;
-	            position: absolute;
-	        }
-	        .item-1 {
-	            background-color: rgb(206, 169, 169);
-	            height: 300px;
-	        }.item-2 {
-	            background-color: rgb(131, 226, 174);
-	            height: 150px;
-	        }.item-3 {
-	            background-color: rgb(77, 30, 30);
-	            height: 350px;
-	        }.item-4 {
-	            background-color: rgb(49, 62, 134);
-	            height: 300px;
-	        }.item-5 {
-	            background-color: rgb(230, 99, 99);
-	            height: 200px;
-	        }.item-6 {
-	            background-color: rgb(206, 169, 169);
-	            height: 300px;
-	        }.item-7 {
-	            background-color: rgb(124, 126, 145);
-	            height: 400px;
-	        }.item-8 {
-	            background-color: rgb(169, 199, 38);
-	            height: 230px;
-	        }.item-9 {
-	            background-color: rgb(114, 128, 53);
-	            height: 300px;
-	        }.item-10 {
-	            background-color: rgb(48, 54, 18);
-	            height: 260px;
-	        }.item-11 {
-	            background-color: rgb(118, 122, 96);
-	            height: 230px;
-	        }.item-12 {
-	            background-color: rgb(118, 122, 96);
-	            height: 240px;
-	        }.item-13 {
-	            background-color: rgb(118, 122, 96);
-	            height: 250px;
-	        }.item-14 {
-	            background-color: rgb(118, 122, 96);
-	            height: 270px;
-	        }.item-15 {
-	            background-color: rgb(118, 122, 96);
-	            height: 330px;
-	        }.item-16 {
-	            background-color: rgb(118, 122, 96);
-	            height: 200px;
-	        }.item-17 {
-	            background-color: rgb(118, 122, 96);
-	            height: 100px;
-	        }.item-18 {
-	            background-color: rgb(118, 122, 96);
-	            height: 400px;
-	        }.item-19 {
-	            background-color: rgb(118, 122, 96);
-	            height: 340px;
-	        }.item-20 {
-	            background-color: rgb(118, 122, 96);
-	            height: 350px;
-	        }.item-21 {
-	            background-color: rgb(118, 122, 96);
-	            height: 360px;
-	        }.item-22 {
-	            background-color: rgb(118, 122, 96);
-	            height: 370px;
-	        }
+.mylike_post{
+	padding: 20rpx 20rpx;
+}
 // 轮播图
 	.home-swiper {
 		padding: 20rpx 20rpx;

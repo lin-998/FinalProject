@@ -16,10 +16,11 @@
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		// ---------------------------------------------------首页模块页面 开始---------------------------------------
 		{
-			"path": "pages/home/home",
+			"path": "pages/homePage/homePage",
 			"style": {
-				"navigationStyle": "custom",
-				"enablePullDownRefresh": true
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false,
+			"navigationStyle": "custom"
 			}
 		}, {
 			"path": "pages/home/affiche/affiche",
@@ -452,17 +453,6 @@
             
         }
         ,{
-            "path" : "pages/homePage/homePage",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false,
-								"navigationStyle": "custom"
-								
-            }
-            
-        }
-        ,{
             "path" : "pages/minePage/minePage",
             "style" :                                                                                    
             {
@@ -496,6 +486,16 @@
             {
                 "navigationBarTitleText": "我喜欢",
                 "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/message/private_chat",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "消息",
+                "enablePullDownRefresh": false,
+								"navigationBarBackgroundColor":"#1e90ff"
             }
             
         }

@@ -28,10 +28,19 @@ function sizeMB(size){
 		return Math.floor(size/1024/1024*100)/100+'MB';
 	}
 }
+
+/**
+ * 
+ * @param   时间戳
+ * @return   yyyy-MM-dd hh:mm 格式的时间
+ */
+ 
+
 export default {
 	numFilter,
 	percent,
-	sizeMB
+	sizeMB,
+
 }
 // export const numFilter= {
 // 	radixPoint(num, places) {
