@@ -1,6 +1,6 @@
 # 项目简介
 
-####运行环境
+#### 运行环境
 node 11.11.0
 HbuilderX
 启动项目
@@ -10,7 +10,7 @@ npm install
 
 使用HbuilderX打开后即可运行[支持 APP 小程序 h5]
 
-####功能简介
+#### 功能简介
 * 登录注册
 * 即时通讯私聊信息
 * 首页轮播图
@@ -23,7 +23,7 @@ npm install
 * 图片压缩(app端)
 * 头像背景个人资料更改
 
-####运行截图
+#### 运行截图
 
 <img src="https://user-images.githubusercontent.com/83082448/154902436-fa795b70-ccbc-4d4c-967e-916ac6348699.png" width="250" height="500px"/><img src="https://user-images.githubusercontent.com/83082448/154902574-aef56949-47cd-4c0d-8654-4928828f2c76.png" width="250px" height="500px"/>
 <img src="https://user-images.githubusercontent.com/83082448/154902613-d3649028-0d60-480f-bd9e-f1f47822798c.png" width="250px" height="500px"/>
@@ -34,7 +34,7 @@ npm install
 
 
 
-####未完成功能
+#### 未完成功能
 * 评论动态
 * 群聊信息
 * 加好友关注
