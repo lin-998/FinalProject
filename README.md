@@ -4,7 +4,7 @@
 node 11.11.0
 HbuilderX
 启动项目
-git clone https://github.com/cometang/tim-uniapp.git
+git clone https://github.com/lin-998/FinalProject.git
 
 npm install 
 
