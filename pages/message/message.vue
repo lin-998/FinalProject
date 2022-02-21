@@ -3,15 +3,15 @@
 		<view class="status_bar1"></view>
 		<view class="status_bar"></view>
 		<view class="nav-list">
-			<view class="">text3</view>
-			<view class="" @click="instructor=!instructor">text56</view>
+			<!-- <view class="">text3</view>
+			<view class="" @click="instructor=!instructor">text56</view> -->
 		</view>
-		<view class="top-box">
+		<!-- <view class="top-box">
 			<view class="top-item" v-for="(v,i) in topList" :key="i" @click="goPages(v.type)">
 				<image class="top-img" :src="v.image" mode=""></image>
 				<view>{{v.name}}</view>
 			</view>
-		</view>
+		</view> -->
 		<view class="msg-list">
 			<view class="msg-item">
 				<view class="portrait">
@@ -23,7 +23,7 @@
 						<view class="msg-name-time">
 							<view class="msg-name">官方小助手</view><view class="msg-time">03-19</view>
 						</view>
-						<view class="msg-text">恭喜你抽中1个月会员试用卡，快点击进入恭喜你抽中1个月会员试用卡，快点击进入</view>					
+						<view class="msg-text">恭喜你加入</view>					
 					</view>
 					
 				</view>

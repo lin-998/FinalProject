@@ -19,6 +19,11 @@ class Main{
 	setAvator(data){
 			return  http.post(baseUrl+'/setAvator',data).then(res=>res.data)
 		}
+		//修改用户背景
+		setBackImage(data){
+				return  http.post(baseUrl+'/setBackImage',data).then(res=>res.data)
+			}
+		
 	//发布动态
 createPost(data){
 		return  http.post(baseUrl+'/createPost',data).then(res=>res.data)

@@ -17,7 +17,7 @@ export default {
 		mainApi.getUserInfo().then(res=>{
 		// console.log(res.data)
 			if(!res.data.avator){
-				res.data.avator=require('static/mine/user_por.jpg')
+				res.data.avator=require('static/img/2.jpg')
 				}
 			commit('getUserInfo',res.data)
 			uni.setStorageSync('user',JSON.stringify(res.data))

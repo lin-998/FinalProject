@@ -1,10 +1,10 @@
 <template>
 	<view class="bgImg login">
 		<view class="logoimg">
-			<image src="/static/login/logo.png" mode="widthFix"></image>
+			<image src="/static/img/6.jpg" mode="widthFix"></image>
 		</view>
 		<!-- 登录表单 -->
-		<view>
+		<view class="login-form">
 			<u-form :model="form" ref="uForm" style="margin-bottom:137rpx;">
 				<!-- <text class="form-title">手机号</text>
 				<u-form-item style="margin-bottom: 20rpx;" prop="phone">
@@ -147,21 +147,25 @@
 
 <style lang="scss" scoped>
 	.login {
-		padding: 80rpx;
-		padding-top: calc(80rpx + 88rpx + var(--status-bar-height));
+		
+		// padding-top: calc(80rpx + 88rpx + var(--status-bar-height));
 		.title {
 			text-align: center;
 			font-size: 64rpx;
 			color: #FFFFFF;
 			margin-bottom: 70rpx;
 		}
-
+.login-form{
+	padding: 80rpx;
+	border-radius: 16rpx;
+	
+}
 		.logoimg {
 			margin: 0 auto;
 			margin-bottom: 30rpx;
-			width: 180rpx;
-			height: 180rpx;
-			border-radius: 16rpx;
+			width: 100%;
+			height: 400rpx;
+			border-radius: 0 0 16rpx 16rpx;
 			overflow: hidden;
 			opacity: 0.9;
 			image {

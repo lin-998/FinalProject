@@ -1,13 +1,13 @@
 <template>
 	<view id="containerId">
-		<view class="mine-header" :style="{background:'url(https://i.imgur.com/Eqzpxh7.jpg) no-repeat center/100% '}">
+		<view class="mine-header" :style="{background:'url('+bgurl+') no-repeat center/100% ' }" @click="chooseAvatar(1)">
 			<view class="icon">
 				<text @click="toRouter" class="iconfont">&#xe6da;</text>
 			</view>
 			<view class="user-info">
-				<view class="info-img" @click="chooseAvatar">
+				<view class="info-img" @click.stop="chooseAvatar(0)" >
 					<image v-if="$store.state.userInfo.avator" :src="$store.state.userInfo.avator"></image>
-					<image v-else src="/static/mine/user_por.jpg"></image>
+					<image v-else src="/static/img/7.jpg"></image>
 				</view>
 				<navigator class="info-detail" url="/pages/mine/setting/personal-data">
 					
@@ -66,10 +66,10 @@
 				upgradeShow:false,
 				apiUrl:apiUrl,
 				navList: [
-					{name:'我的激活码',img:require('static/mine/icon_jihuoma.png'),url:'/pages/mine/my-activecode'},
-					// {name:'我的不分润卡',img:require('static/mine/wdbfrk.png'),url:'/pages/trading/my-profitcard'},
-					{name:'交易记录',img:require('static/mine/icon_jiaoyijilu.png'),url:'/pages/trading/trading-record'},
-					{name:'资产',img:require('static/mine/icon_zichang.png'),url:'/pages/mine/property/property'},
+					{name:'个人资料',img:require('static/mine/icon_jihuoma.png'),url:'/pages/mine/setting/personal-data'},
+					{name:'手机号码',img:require('static/mine/icon_zichang.png'),url:'/pages/mine/setting/phone-number'},
+					{name:'修改登录密码',img:require('static/mine/icon_jiaoyijilu.png'),url:'/pages/mine/setting/login-password'},
+					
 					{name:'分享',img:require('static/mine/icon_fenxiang.png'),url:'/pages/mine/share'},
 					{name:'社区',img:require('static/mine/icon_shequ.png'),url:'/pages/mine/community'},
 					{name:'我喜欢的动态',img:require('static/mine/icon_about.png'),url:'/pages/minePage/mylike'},
@@ -77,10 +77,14 @@
 				],
 				sss:false,
 				enterNumber:0,
-				AllCardLog:[]
+				AllCardLog:[],
+				loadType:'',//上传类型
+				// bgurl:this.$store.state.userInfo.background,//背景url
 			};
 		},
 		onShow() {
+			
+			// console.log(this.bgurl)
 			// if(!uni.getStorageSync('user')) {
 			// 	return this.show=true
 			// 	//跳转到登陆页面
@@ -115,8 +119,13 @@
 		onHide() {
 			this.show=false
 		},
+		computed:{
+			bgurl(){
+				return this.$store.state.userInfo.background
+			}
+		},
 		created() {
-			console.log(this.$store.state.userInfo)
+			
 			// if(!uni.getStorageSync('user')){return}
 			// this.$store.dispatch('getUserInfo')
 			// 监听从裁剪页发布的事件，获得裁剪结果
@@ -124,6 +133,7 @@
 				this.avatarUrl = path;
 				// console.log(path);
 				console.log(this.sss);
+				// console.log(this.loadType)
 				// 可以在此上传到服务端
 				if(this.sss){
 					this.sss=false
@@ -133,21 +143,38 @@
 						name: 'file',
 						// header:{"X-Requested-Token": uni.getStorageSync('userToken')},
 						success: (res) => {
-							if(JSON.parse(res.data).code!=200){return this.$toast('修改头像失败')}
+							if(JSON.parse(res.data).code!=200){return this.$toast('上传失败')}
 							this.sss=false
-							mainApi.setAvator({
-								id:this.$store.state.userInfo.id,
-								avator:JSON.parse(res.data).data,
-								// username:this.$store.state.userInfo.username
-								}).then(res=>{
-									this.sss=false
-								if(res.code==200){
-									this.$toast('修改成功')
-									this.$store.dispatch('getUserInfo')
-								}else{
-									this.$toast(res.msg)
-								}
-							})
+							
+							if(this.loadType==0){
+								mainApi.setAvator({
+									id:this.$store.state.userInfo.id,
+									avator:JSON.parse(res.data).data,
+									// username:this.$store.state.userInfo.username
+									}).then(res=>{
+										this.sss=false
+									if(res.code==200){
+										this.$toast('头像修改成功')
+										this.$store.dispatch('getUserInfo')
+									}else{
+										this.$toast(res.msg)
+									}
+								})
+							}else{
+								mainApi.setBackImage({
+									id:this.$store.state.userInfo.id,
+									background:JSON.parse(res.data).data,
+									// username:this.$store.state.userInfo.username
+									}).then(res=>{
+										this.sss=false
+									if(res.code==200){
+										this.$toast('背景修改成功')
+										this.$store.dispatch('getUserInfo')
+									}else{
+										this.$toast(res.msg)
+									}
+								})
+							}
 						}
 					});
 				}
@@ -156,7 +183,9 @@
 	
 	
 		methods:{
-			
+			setBackImage(){
+				
+			},
 			confirmUpgrade(item,tradePassword){
 				console.log(item);
 				loginApi.getPublicKey({username:this.$store.state.userInfo.id}).then(res=>{
@@ -214,8 +243,9 @@
 					url:"/pages/mine/setting/setting"
 				})
 			},
-			chooseAvatar() {
+			chooseAvatar(data) {
 				this.sss=true
+				this.loadType=data
 				// 此为uView的跳转方法，详见"文档-JS"部分，也可以用uni的uni.navigateTo
 				this.$u.route({
 					// 关于此路径，请见下方"注意事项"
@@ -240,6 +270,8 @@
 	height: 100%;
 }
 .mine-header{
+
+	border-radius: 0  0 16rpx 16rpx ;
 	opacity: 0.8;
 	padding: 80rpx 30rpx 50rpx;
 	background-color: #FFFFFF;
@@ -273,6 +305,7 @@
 		display: flex;
 		// align-items: center;
 		.info-img{
+		
 			width: 96rpx;
 			height: 96rpx;
 			border-radius: 50%;

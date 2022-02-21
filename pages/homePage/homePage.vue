@@ -13,7 +13,7 @@
 				</swiper-item>
 				<swiper-item v-if="swiperImg.length==0">
 					<view class="swiper-list">
-						<image src="/static/home/banner.png" mode="widthFix"></image>
+						<image src="/static/img/3.jpg" mode="widthFix"></image>
 					</view>
 				</swiper-item>
 			</swiper>
@@ -23,16 +23,19 @@
 
 		</view>
 		<view><defalut-img></defalut-img></view>
+		<view class="mylike_post_title">
+			<text>我喜欢的动态</text>
+		</view>
 <view class="mylike_post">
 	<u-waterfall v-model="flowList" ref="uWaterfall">
 				<template v-slot:left="{leftList}">
 					<view class="demo-warter" v-for="(item, index) in leftList" :key="index">
-						<h-moment :item="item"  @updataLike="updata" :heartFill="true" />
+						<h-moment :item="item"  @updataLike="updata" :likeStatus="true" />
 					</view>
 				</template>
 				<template v-slot:right="{rightList}">
 					<view class="demo-warter" v-for="(item, index) in rightList" :key="index">
-							<h-moment :item="item"  @updataLike="updata":heartFill="true"/>
+							<h-moment :item="item"  @updataLike="updata":likeStatus="true"/>
 					</view>
 				</template>
 			</u-waterfall>
@@ -57,6 +60,12 @@
 				flowList:[],
 				list:[],
 			}
+		},
+		onLoad() {
+			var loginRes = this.checkLogin();
+				if (!loginRes) {
+					return false;
+				}
 		},
 		onShow() {
 			this.getSlideshow()
@@ -93,6 +102,10 @@
 <style lang="scss" scoped >
 .mylike_post{
 	padding: 20rpx 20rpx;
+}
+.mylike_post_title{
+	padding: 20rpx 20rpx;
+	font-size: 34rpx;
 }
 // 轮播图
 	.home-swiper {

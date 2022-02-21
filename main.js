@@ -24,6 +24,14 @@ Vue.use(new VueSocketIO({
 }))
 //消息提示
 Vue.prototype.$toast = Utils.toast;
+Vue.prototype.checkLogin = function(){
+	const token = uni.getStorageSync('userToken')
+	if(token === ''){ // 本地没有token表示未登录
+		console.log('未登录返回到登录页')
+		uni.reLaunch({url:'/pages/login/login'})
+		return false
+	}
+}
 Vue.config.productionTip = false
 // 添加全局filter
 Object.keys(filters).map(v => {

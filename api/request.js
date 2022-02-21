@@ -70,7 +70,7 @@ http.interceptors.response.use(
 		plus.nativeUI.closeWaiting()
 		// #endif
 		/* 对响应成功做点什么 可使用async await 做异步操作*/
-		if (response.data.code == 202 || response.data.code == 201) {
+		if (response.data.code == 202 || response.data.code == 201||response.data.code == 500) {
 			uni.showToast({
 				icon:'none',
 				title: response.data.msg
