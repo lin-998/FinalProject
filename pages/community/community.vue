@@ -1,6 +1,5 @@
 <template>
 	<view class="contain">
-		社区
 		<view class="moment-wrap" >
 			<!-- <scroll-view   @scrolltolower="scrollTolower">
 				<block v-for="(item,index) in list" :key="index" class="inter-component">
@@ -15,7 +14,7 @@
 						</template>
 						<template v-slot:right="{rightList}">
 							<view class="demo-warter" v-for="(item, index) in rightList" :key="index">
-									<hMoment :item="item"  @updataLike="updata"/>
+									<hMoment :item="item"  @updataLike="updata"  />
 							</view>
 						</template>
 					</u-waterfall>

@@ -1,8 +1,8 @@
 <template>
-	<view>
+	<view class="contain">
 		<u-input v-model="content" type="text"></u-input>
 		<u-upload ref="uUpload" :action="action" :auto-upload="true"></u-upload>
-		<u-button @click="submit">提交</u-button>
+		<u-button @click="submit" class="btn">提交</u-button>
 	</view>
 </template>
 
@@ -57,6 +57,14 @@
 	}
 </script>
 
-<style>
+<style lang="scss" scoped>
+	.contain{
+		padding: 20rpx 15rpx 0 15rpx;
+		
+	
+	.btn{
+		margin-top: 60rpx;
+	}
+	}
 
 </style>

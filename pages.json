@@ -534,7 +534,7 @@
 				"pagePath": "pages/video/video",
 				"iconPath": "static/tabbar/record.png",
 				"selectedIconPath": "static/tabbar/record-active.png",
-				"text": "视频"
+				"text": "发布"
 			},
 			{
 				"pagePath": "pages/message/message",

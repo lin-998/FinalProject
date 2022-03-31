@@ -13,7 +13,7 @@
 			</view>
 		</view> -->
 		<view class="msg-list">
-			<view class="msg-item">
+			<!-- <view class="msg-item">
 				<view class="portrait">
 					<u-badge  type="error" count="7" ></u-badge>					
 					<u-image width="106" height="106" src="/static/message/gfxzs.png" shape="circle"></u-image>
@@ -27,7 +27,7 @@
 					</view>
 					
 				</view>
-			</view>
+			</view> -->
 			<!-- 消息列表 -->
 			<view class="msg-item" v-for="(v,i) in msgListGetter" :key="i" @click="enterChat(v.type,v.id)">
 				<view class="portrait">

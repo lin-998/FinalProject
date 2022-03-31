@@ -4,15 +4,15 @@
 			<image :src="momentInfo.avator" mode=""></image>
 			<text>{{momentInfo.nickname||"酷酷酷酷酷"}}</text>
 		</view>
-		<image src="../../static/1.jpg" mode="widthFix"></image>
+		<image :src="momentInfo.post_url" mode="widthFix"></image>
 		<view class="a-padding">
 			<view class="content">
 
 				<view class="down-text">
 					<text class="title">theme</text>
-					<text>{{momentInfo.content||"靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠"}}</text>
+					<text>{{momentInfo.post_content||"靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠靠"}}</text>
 					<view class="down-other">
-						<text>2021</text>
+						<text>{{momentInfo.create_time.slice(0,10)}}</text>
 						<view class="unlike">
 							<u-icon name="thumb-down"></u-icon>
 							<text>不喜欢</text>

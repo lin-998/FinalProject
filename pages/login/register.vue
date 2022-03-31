@@ -19,9 +19,9 @@
 			</u-form>
 		</view>
 		<view class="footer">
-			<text class="iconfont checkbox-icon2" v-if="checked" @click="checked=false">&#xe8f5;</text>
-			<text class="iconfont checkbox-icon" v-else @click="checked=true">&#xe685;</text>
-			<view @click="changeClick" class="text">《注册协议》</view>
+		<!-- 	<text class="iconfont checkbox-icon2" v-if="checked" @click="checked=false">&#xe8f5;</text>
+			<text class="iconfont checkbox-icon" v-else @click="checked=true">&#xe685;</text> -->
+			<!-- <view @click="changeClick" class="text">《注册协议》</view> -->
 		</view>
 		<u-button class="submitBtn" @click="submit">注册</u-button>
 		
